@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu Lateral</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+  }
+
+  #sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    padding-top: 20px;
+    color: #fff;
+  }
+
+  #content {
+    margin-left: 200px;
+    padding: 20px;
+  }
+
+  .activity {
+    display: none;
+  }
+
+  .activity.active {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<div id="sidebar">
+  <a href="#" onclick="showActivity('html')">Tags HTML</a><br>
+  <a href="#" onclick="showActivity('css')">CSS Fundamentos</a><br>
+  <a href="#" onclick="showActivity('flexbox')">Flexbox</a><br>
+  <a href="#" onclick="showActivity('dom')">DOM</a><br>
+</div>
+
+<div id="content">
+  <div id="html" class="activity">
+    <!-- Conteúdo da atividade HTML -->
+    <h2>Tags HTML</h2>
+    <p>Conteúdo sobre tags HTML.</p>
+  </div>
+  
+  <div id="css" class="activity">
+    <!-- Conteúdo da atividade CSS -->
+    <h2>CSS Fundamentos</h2>
+    <p>Conteúdo sobre CSS Fundamentos.</p>
+  </div>
+  
+  <div id="flexbox" class="activity">
+    <!-- Conteúdo da atividade Flexbox -->
+    <h2>Flexbox</h2>
+    <p>Conteúdo sobre Flexbox.</p>
+  </div>
+  
+  <div id="dom" class="activity">
+    <!-- Conteúdo da atividade DOM -->
+    <h2>DOM</h2>
+    <p>Conteúdo sobre DOM.</p>
+  </div>
+</div>
+
+<script>
+  function showActivity(activityName) {
+    var activities = document.querySelectorAll('.activity');
+    activities.forEach(function(activity) {
+      activity.classList.remove('active');
+    });
+    document.getElementById(activityName).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
